@@ -9,7 +9,7 @@ const Options = ({
   translateTo,
   setTranslateTo,
 }) => {
-  console.log("rendering child:options");
+  // console.log("rendering child:options");
   return (
     <>
       {" "}

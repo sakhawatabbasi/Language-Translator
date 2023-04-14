@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 
 const Inputform = forwardRef((props, ref) => {
-  console.log("rendering child:input form");
+  // console.log("rendering child:input form");
   return (
     <div className="text-input">
       <textarea

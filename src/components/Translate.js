@@ -3,7 +3,7 @@ import Inputform from "./Inputform";
 import Options from "./Options";
 
 const Translate = () => {
-  console.log("rendering parent:Translate");
+  // console.log("rendering parent:Translate");
   const [translateFrom, setTranslateFrom] = useState("en-GB");
   const [translateTo, setTranslateTo] = useState("ur-PK");
   const [translatedText, setTranslatedText] = useState("");
