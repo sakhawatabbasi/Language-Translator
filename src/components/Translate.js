@@ -40,6 +40,7 @@ const Translate = () => {
 
   const handleCopyClick = () => {
     navigator.clipboard.writeText(translatedTextRef.current);
+    navigator.clipboard.writeText(inpuTextRef.current.value);
   };
 
   const handleSubmit = (event) => {
@@ -56,7 +57,7 @@ const Translate = () => {
           <div className="loader"></div>
         </div>
       )}
-      <div className="container rainbow">
+      <div className="container rainbow3">
         <div className="wrapper">
           <form onSubmit={handleSubmit}>
             <Inputform
