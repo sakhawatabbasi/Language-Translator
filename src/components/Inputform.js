@@ -1,24 +1,25 @@
-import React from 'react'
+import React, { forwardRef } from "react";
 
-const Inputform = ({inputText,setInputText,translatedText,}) => {
-    // console.log("rendering child:input form");
+const Inputform = forwardRef((props, ref) => {
+  console.log("rendering child:input form");
   return (
     <div className="text-input">
-    <textarea
-            
+      <textarea
+        required
+        ref={ref}
         className="from-text"
         placeholder="Enter text..."
-        type="text" value={inputText} onChange={e => setInputText(e.target.value)}
+        type="text"
+        value={props.inputText}
       ></textarea>
-       <textarea
-     
-      disabled
-      className="to-text"
-      placeholder="Translation..."
-      value={translatedText}
+      <textarea
+        disabled
+        className="to-text"
+        placeholder="Translation..."
+        value={props.translatedText}
       ></textarea>
-  </div>
-  )
-}
+    </div>
+  );
+});
 
 export default Inputform;

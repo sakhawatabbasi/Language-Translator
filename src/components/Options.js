@@ -1,31 +1,55 @@
-import React from 'react'
+import { React, memo } from "react";
+import countries from "../data";
 
-const Options = ({translateFrom,setTranslateFrom,handleCopyClick,handleExchangeClick,translateTo,setTranslateTo}) => {
-    // console.log("rendering child:options");
+const Options = ({
+  translateFrom,
+  setTranslateFrom,
+  handleCopyClick,
+  handleExchangeClick,
+  translateTo,
+  setTranslateTo,
+}) => {
+  console.log("rendering child:options");
   return (
-    <ul className="controls">
-            <li className="row from">
-            <select value={translateFrom} onChange={e => setTranslateFrom(e.target.value)}>
-              <option value="en-GB">English</option><option value="ur-PK">Urdu</option><option value="hi-IN">Hindi</option><option value="ar-SA">Arabic</option><option value="am-ET">Amharic</option><option value="be-BY">Bielarus</option><option value="bem-ZM">Bemba</option><option value="bi-VU">Bislama</option><option value="bjs-BB">Bajan</option><option value="bn-IN">Bengali</option><option value="bo-CN">Tibetan</option><option value="br-FR">Breton</option><option value="bs-BA">Bosnian</option><option value="ca-ES">Catalan</option><option value="cop-EG">Coptic</option><option value="cs-CZ">Czech</option><option value="cy-GB">Welsh</option><option value="da-DK">Danish</option><option value="dz-BT">Dzongkha</option><option value="de-DE">German</option><option value="dv-MV">Maldivian</option><option value="el-GR">Greek</option><option value="es-ES">Spanish</option><option value="et-EE">Estonian</option><option value="eu-ES">Basque</option><option value="fa-IR">Persian</option><option value="fi-FI">Finnish</option><option value="fn-FNG">Fanagalo</option><option value="fo-FO">Faroese</option><option value="fr-FR">French</option><option value="gl-ES">Galician</option><option value="gu-IN">Gujarati</option><option value="ha-NE">Hausa</option><option value="he-IL">Hebrew</option><option value="hr-HR">Croatian</option><option value="hu-HU">Hungarian</option><option value="id-ID">Indonesian</option><option value="is-IS">Icelandic</option><option value="it-IT">Italian</option><option value="ja-JP">Japanese</option><option value="kk-KZ">Kazakh</option><option value="km-KM">Khmer</option><option value="kn-IN">Kannada</option><option value="ko-KR">Korean</option><option value="ku-TR">Kurdish</option><option value="ky-KG">Kyrgyz</option><option value="la-VA">Latin</option><option value="lo-LA">Lao</option><option value="lv-LV">Latvian</option><option value="men-SL">Mende</option><option value="mg-MG">Malagasy</option><option value="mi-NZ">Maori</option><option value="ms-MY">Malay</option><option value="mt-MT">Maltese</option><option value="my-MM">Burmese</option><option value="ne-NP">Nepali</option><option value="niu-NU">Niuean</option><option value="nl-NL">Dutch</option><option value="no-NO">Norwegian</option><option value="ny-MW">Nyanja</option><option value="pa-IN">Panjabi</option><option value="ps-PK">Pashto</option><option value="pau-PW">Palauan</option><option value="pis-SB">Pijin</option><option value="pl-PL">Polish</option><option value="pt-PT">Portuguese</option><option value="rn-BI">Kirundi</option><option value="ro-RO">Romanian</option><option value="ru-RU">Russian</option><option value="sg-CF">Sango</option><option value="si-LK">Sinhala</option><option value="sk-SK">Slovak</option><option value="sm-WS">Samoan</option><option value="sn-ZW">Shona</option><option value="so-SO">Somali</option><option value="sq-AL">Albanian</option><option value="sr-RS">Serbian</option><option value="sv-SE">Swedish</option><option value="sw-SZ">Swahili</option><option value="ta-LK">Tamil</option><option value="te-IN">Telugu</option><option value="tet-TL">Tetum</option><option value="tg-TJ">Tajik</option><option value="th-TH">Thai</option><option value="ti-TI">Tigrinya</option><option value="tk-TM">Turkmen</option><option value="tl-PH">Tagalog</option><option value="tn-BW">Tswana</option><option value="to-TO">Tongan</option><option value="tr-TR">Turkish</option><option value="uk-UA">Ukrainian</option><option value="uz-UZ">Uzbek</option><option value="vi-VN">Vietnamese</option><option value="wo-SN">Wolof</option><option value="xh-ZA">Xhosa</option><option value="yi-YD">Yiddish</option><option value="zu-ZA">Zulu</option>
-           </select>
-           <div className="icons">
-                <i id="from" className="fas fa-copy"  onClick={handleCopyClick}></i>
-            </div>
-            </li>
-            <li className="exchange" onClick={handleExchangeClick}>
-              <i className="fas fa-exchange-alt"></i>
-            </li>
-            <li className="row to">
-            <div className="icons">
-                <i id="from" className="fas fa-copy"  onClick={handleCopyClick}></i>
-            </div>
-            <select value={translateTo} onChange={e => setTranslateTo(e.target.value)}>
-               <option value="en-GB">English</option><option value="ur-PK">Urdu</option><option value="hi-IN">Hindi</option><option value="ar-SA">Arabic</option><option value="am-ET">Amharic</option><option value="be-BY">Bielarus</option><option value="bem-ZM">Bemba</option><option value="bi-VU">Bislama</option><option value="bjs-BB">Bajan</option><option value="bn-IN">Bengali</option><option value="bo-CN">Tibetan</option><option value="br-FR">Breton</option><option value="bs-BA">Bosnian</option><option value="ca-ES">Catalan</option><option value="cop-EG">Coptic</option><option value="cs-CZ">Czech</option><option value="cy-GB">Welsh</option><option value="da-DK">Danish</option><option value="dz-BT">Dzongkha</option><option value="de-DE">German</option><option value="dv-MV">Maldivian</option><option value="el-GR">Greek</option><option value="es-ES">Spanish</option><option value="et-EE">Estonian</option><option value="eu-ES">Basque</option><option value="fa-IR">Persian</option><option value="fi-FI">Finnish</option><option value="fn-FNG">Fanagalo</option><option value="fo-FO">Faroese</option><option value="fr-FR">French</option><option value="gl-ES">Galician</option><option value="gu-IN">Gujarati</option><option value="ha-NE">Hausa</option><option value="he-IL">Hebrew</option><option value="hr-HR">Croatian</option><option value="hu-HU">Hungarian</option><option value="id-ID">Indonesian</option><option value="is-IS">Icelandic</option><option value="it-IT">Italian</option><option value="ja-JP">Japanese</option><option value="kk-KZ">Kazakh</option><option value="km-KM">Khmer</option><option value="kn-IN">Kannada</option><option value="ko-KR">Korean</option><option value="ku-TR">Kurdish</option><option value="ky-KG">Kyrgyz</option><option value="la-VA">Latin</option><option value="lo-LA">Lao</option><option value="lv-LV">Latvian</option><option value="men-SL">Mende</option><option value="mg-MG">Malagasy</option><option value="mi-NZ">Maori</option><option value="ms-MY">Malay</option><option value="mt-MT">Maltese</option><option value="my-MM">Burmese</option><option value="ne-NP">Nepali</option><option value="niu-NU">Niuean</option><option value="nl-NL">Dutch</option><option value="no-NO">Norwegian</option><option value="ny-MW">Nyanja</option><option value="pa-IN">Panjabi</option><option value="ps-PK">Pashto</option><option value="pau-PW">Palauan</option><option value="pis-SB">Pijin</option><option value="pl-PL">Polish</option><option value="pt-PT">Portuguese</option><option value="rn-BI">Kirundi</option><option value="ro-RO">Romanian</option><option value="ru-RU">Russian</option><option value="sg-CF">Sango</option><option value="si-LK">Sinhala</option><option value="sk-SK">Slovak</option><option value="sm-WS">Samoan</option><option value="sn-ZW">Shona</option><option value="so-SO">Somali</option><option value="sq-AL">Albanian</option><option value="sr-RS">Serbian</option><option value="sv-SE">Swedish</option><option value="sw-SZ">Swahili</option><option value="ta-LK">Tamil</option><option value="te-IN">Telugu</option><option value="tet-TL">Tetum</option><option value="tg-TJ">Tajik</option><option value="th-TH">Thai</option><option value="ti-TI">Tigrinya</option><option value="tk-TM">Turkmen</option><option value="tl-PH">Tagalog</option><option value="tn-BW">Tswana</option><option value="to-TO">Tongan</option><option value="tr-TR">Turkish</option><option value="uk-UA">Ukrainian</option><option value="uz-UZ">Uzbek</option><option value="vi-VN">Vietnamese</option><option value="wo-SN">Wolof</option><option value="xh-ZA">Xhosa</option><option value="yi-YD">Yiddish</option><option value="zu-ZA">Zulu</option>
-            </select>
-            
-            </li>
-          </ul>
-  )
-}
+    <>
+      {" "}
+      <ul className="controls">
+        <li className="row from">
+          <select
+            value={translateFrom}
+            onChange={(e) => setTranslateFrom(e.target.value)}
+          >
+            {Object.entries(countries).map(([code, name]) => (
+              <option key={code} value={code}>
+                {name}
+              </option>
+            ))}
+          </select>
+          <div className="icons">
+            <i id="from" className="fas fa-copy" onClick={handleCopyClick}></i>
+          </div>
+        </li>
+        <li className="exchange" onClick={handleExchangeClick}>
+          <i className="fas fa-exchange-alt"></i>
+        </li>
+        <li className="row to">
+          <div className="icons">
+            <i id="from" className="fas fa-copy" onClick={handleCopyClick}></i>
+          </div>
+          <select
+            value={translateTo}
+            onChange={(e) => setTranslateTo(e.target.value)}
+          >
+            {Object.entries(countries).map(([code, name]) => (
+              <option key={code} value={code}>
+                {name}
+              </option>
+            ))}
+          </select>
+        </li>
+      </ul>
+    </>
+  );
+};
 
-export default Options;
+export default memo(Options);

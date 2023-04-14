@@ -12,10 +12,12 @@ body {
   min-height: 100vh;
  background:#434d82;
 }
+
+
+
 .rainbow { 
   --border-size: 0.3rem;
   border: var(--border-size) solid transparent;
-
   /* Paint an image in the border */
   border-image: conic-gradient(
       from var(--angle),
@@ -45,7 +47,7 @@ body {
   }
 
   .rainbow {
-    animation: rotate 4s linear infinite, opacityChange 3s infinite alternate;
+    animation: rotate 6s linear infinite, opacityChange 4s infinite alternate;
   }
 .container {
   min-width: 1000px;
@@ -91,6 +93,7 @@ li,
 .controls {
   list-style: none;
   padding: 12px 15px;
+  margin-top: 20px;
 }
 .controls .row .icons {
   width: 38%;
@@ -147,7 +150,13 @@ li,
 .controls i:active {
   transform: scale(0.9);
 }
-.butn{
+
+.rainbow1:hover{
+  background:aqua;
+  color: black;
+}
+
+.rainbow1{
   width: 100%;
   padding: 14px;
   outline: none;
@@ -158,8 +167,51 @@ li,
   font-size: 17px;
   border-radius: 5px;
   background:gray;
-}
-.butn:hover{
-  background:aqua;
   color: black;
+  --border-size: 0.3rem;
+  border: var(--border-size) solid transparent;
+
+  /* Paint an image in the border */
+  border-image: conic-gradient(
+      from var(--angle),
+      #d53e33 0deg 90deg,
+      #fbb300 90deg 180deg,
+      #377af5 180deg 270deg,
+      #399953 270deg 360deg
+    )
+    1 stretch;
+  background: rgb(255 255 255 / var(--opacity));
+}
+
+
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
