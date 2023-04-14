@@ -22,7 +22,6 @@ const Translate = () => {
       .then((data) => {
         translatedTextRef.current = data.responseData.translatedText;
         setTranslatedText(translatedTextRef.current);
-      
       })
       .catch((error) => {
         console.error(error);
@@ -33,13 +32,11 @@ const Translate = () => {
   }, [translateFrom, translateTo]);
 
   const handleExchangeClick = () => {
-     setTranslateFrom(translateTo);
-     setTranslateTo(translateFrom);
+    setTranslateFrom(translateTo);
+    setTranslateTo(translateFrom);
     inpuTextRef.current.value = translatedTextRef.current;
     setTranslatedText("");
-    
   };
-  
 
   const handleCopyClick = () => {
     navigator.clipboard.writeText(translatedTextRef.current);
@@ -49,9 +46,7 @@ const Translate = () => {
     event.preventDefault();
     if (inpuTextRef.current.value.trim() !== "") {
       translateText();
-      
     }
-    
   };
 
   return (
