@@ -10,12 +10,10 @@ body {
   justify-content: center;
   padding: 0 10px;
   min-height: 100vh;
- background:#434d82;
+  background: #434d82;
 }
 
-
-
-.rainbow { 
+.rainbow {
   --border-size: 0.3rem;
   border: var(--border-size) solid transparent;
   /* Paint an image in the border */
@@ -32,23 +30,21 @@ body {
 
 /* Animate when Houdini is available */
 
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
 
-  @property --angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
+@keyframes rotate {
+  to {
+    --angle: 360deg;
   }
+}
 
- 
-  @keyframes rotate {
-    to {
-      --angle: 360deg;
-    }
-  }
-
-  .rainbow {
-    animation: rotate 6s linear infinite, opacityChange 4s infinite alternate;
-  }
+.rainbow {
+  animation: rotate 6s linear infinite, opacityChange 4s infinite alternate;
+}
 .container {
   min-width: 1000px;
   width: 100%;
@@ -151,12 +147,12 @@ li,
   transform: scale(0.9);
 }
 
-.rainbow1:hover{
-  background:aqua;
+.rainbow1:hover {
+  background: aqua;
   color: black;
 }
 
-.rainbow1{
+.rainbow1 {
   width: 100%;
   padding: 14px;
   outline: none;
@@ -166,7 +162,7 @@ li,
   margin-top: 20px;
   font-size: 17px;
   border-radius: 5px;
-  background:gray;
+  background: gray;
   color: black;
   --border-size: 0.3rem;
   border: var(--border-size) solid transparent;
@@ -182,8 +178,6 @@ li,
     1 stretch;
   background: rgb(255 255 255 / var(--opacity));
 }
-
-
 
 .loader-container {
   position: fixed;
@@ -216,12 +210,10 @@ li,
   }
 }
 
-
 @media only screen and (max-width: 600px) {
   .container {
     min-width: 345px;
     width: 30%;
-
   }
   .controls .row .icons {
     width: 25%;
@@ -231,26 +223,26 @@ li,
     list-style: none;
     padding: 1px 1px;
     margin-top: 2px;
-}
-.controls .row select {
-  color: #333;
-  border: none;
-  outline: none;
-  font-size: 8px;
-  font-weight: bold;
-  background: none;
-}
-option {
-  font-size: small;
-}
-.wrapper {
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  width: 290px;
-}
-.controls .row .icons i {
-  width: 50px;
-  font-size: 14px;
+  }
+  .controls .row select {
+    color: #333;
+    border: none;
+    outline: none;
+    font-size: 8px;
+    font-weight: bold;
+    background: none;
+  }
+  option {
+    font-size: small;
+  }
+  .wrapper {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 290px;
+  }
+  .controls .row .icons i {
+    width: 50px;
+    font-size: 14px;
 
-}
+  }
 }
